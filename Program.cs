@@ -5,10 +5,13 @@ namespace AOC
 
         static void Main(string[] args)
         {
-            Day1.PartOne("debug");
-            Day1.PartTwo("debug");
+
+            string mode = "debug";
+            if (args.Length > 0) mode = args[0];
+
+            Day1.PartOne(mode);
+            Day1.PartTwo(mode);
         }
     }
 }
 
-    
