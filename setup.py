@@ -15,12 +15,14 @@ f.write(
         {
             // string[] data = Helper.ReadAsArray(mode);
             string data = Helper.ReadAsString(mode);
+            Console.WriteLine("Part One -> " + data);
             
         }
         public static void PartTwo(string mode)
         {
             // string[] data = Helper.ReadAsArray(mode);
             string data = Helper.ReadAsString(mode);
+            Console.WriteLine("Part Two -> " + data);
             
         }
 
@@ -39,8 +41,11 @@ f.write(
 
         static void Main(string[] args)
         {
-            """ + f"""Day{folder_number}.PartOne("debug");
-            Day{folder_number}.PartTwo("debug");""" + """
+
+            string mode = "debug";
+            if (args.Length > 0) mode = args[0];
+            """ + f"""Day{folder_number}.PartOne(mode);
+            Day{folder_number}.PartTwo(mode);""" + """
         }
     }
 }

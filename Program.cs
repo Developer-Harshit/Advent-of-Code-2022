@@ -8,10 +8,10 @@ namespace AOC
 
             string mode = "debug";
             if (args.Length > 0) mode = args[0];
-
-            Day1.PartOne(mode);
-            Day1.PartTwo(mode);
+            Day2.PartOne(mode);
+            Day2.PartTwo(mode);
         }
     }
 }
 
+    
