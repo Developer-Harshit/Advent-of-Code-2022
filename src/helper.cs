@@ -10,6 +10,10 @@ namespace AOC
         public static string debugPath = "./data/debug.txt";
         public static string mainPath = "./data/main.txt";
 
+        public static bool WithinBounds(int x, int y, int width, int height)
+        {
+            return x >= 0 && x < width && y >= 0 && y < height;
+        }
         public static string ReadAsString(string mode)
         {
             if (mode == "debug")
