@@ -14,6 +14,10 @@ namespace AOC
         {
             return x >= 0 && x < width && y >= 0 && y < height;
         }
+        public static int FindIndex(int x, int y, int[] dim)
+        {
+            return x + y * dim[0];
+        }
         public static string ReadAsString(string mode)
         {
             if (mode == "debug")
