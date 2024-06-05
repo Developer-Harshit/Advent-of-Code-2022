@@ -14,5 +14,8 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# unsolved
+day_16.cs
+
 # AOC data
 data
