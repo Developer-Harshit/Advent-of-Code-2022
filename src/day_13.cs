@@ -11,16 +11,16 @@ namespace AOC
         public static int draw = 0;
         public static int correct = 1;
         public static int wrong = -1;
-        static int CheckPackerOrder(JsonNode first, JsonNode second)
+        static int CheckPackerOrder(JsonNode? first, JsonNode? second)
         {
 
-            if (first.GetType().ToString() != arrayCheck)
+            if (first?.GetType().ToString() != arrayCheck)
                 first = JsonArray.Parse($"[{first}]");
 
-            if (second.GetType().ToString() != arrayCheck)
+            if (second?.GetType().ToString() != arrayCheck)
                 second = JsonArray.Parse($"[{second}]");
 
-
+            if (first == null || second == null) return wrong;
             var o1 = first.AsArray();
             var o2 = second.AsArray();
             int len = Math.Min(o1.Count, o2.Count);
@@ -28,6 +28,9 @@ namespace AOC
             {
                 var a = o1[i];
                 var b = o2[i];
+                if (a == null || b == null) continue;
+
+
                 if (a.GetType().ToString() == arrayCheck || b.GetType().ToString() == arrayCheck)
                 {
 
@@ -95,8 +98,8 @@ namespace AOC
             List<JsonNode> arr = [];
             for (int i = 0; i < data.Length; i += 3)
             {
-                JsonNode first = JsonArray.Parse(data[i]);
-                var second = JsonArray.Parse(data[i + 1]);
+                JsonNode? first = JsonArray.Parse(data[i]);
+                JsonNode? second = JsonArray.Parse(data[i + 1]);
                 if (first == null || second == null) continue;
 
                 arr.Add(first);
